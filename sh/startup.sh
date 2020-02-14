@@ -2,4 +2,4 @@
 
 /usr/local/bin/php-fpm
 /usr/local/nginx/sbin/nginx;
-/bin/bash
+vi
