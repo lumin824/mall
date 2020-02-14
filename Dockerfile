@@ -23,6 +23,7 @@ WORKDIR php-5.6.40
 RUN ./configure --enable-fpm --with-mysql
 RUN make
 RUN make install
+RUN cp sapi/fpm/php-fpm /usr/local/bin
 
 EXPOSE 80
 
