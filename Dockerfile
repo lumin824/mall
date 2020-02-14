@@ -23,6 +23,8 @@ WORKDIR php-5.6.40
 RUN ./configure --enable-fpm --with-mysql
 RUN make
 RUN make install
+RUN cp /usr/local/etc/php-fpm.d/www.conf.default /usr/local/etc/php-fpm.d/www.conf
+RUN cp php.ini-development /usr/local/php/php.ini
 RUN cp sapi/fpm/php-fpm /usr/local/bin
 
 EXPOSE 80
