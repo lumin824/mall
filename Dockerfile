@@ -24,7 +24,7 @@ RUN ./configure --enable-fpm --with-mysql
 RUN make
 RUN make install
 RUN cp php.ini-development /usr/local/php/php.ini
-RUN cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.d/www.conf
+RUN cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
 RUN cp sapi/fpm/php-fpm /usr/local/bin
 
 EXPOSE 80
