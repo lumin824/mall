@@ -13,8 +13,7 @@ WORKDIR nginx-1.16.1
 RUN ./configure
 RUN make
 RUN make install
-COPY ./www/ /usr/local/nginx/html/
-COPY ./nginx.conf /usr/local/nginx/conf/nginx.conf
+
 
 WORKDIR /usr/local/src
 RUN wget https://www.php.net/distributions/php-5.6.40.tar.gz
@@ -27,8 +26,10 @@ RUN cp php.ini-development /usr/local/php/php.ini
 RUN cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
 RUN cp sapi/fpm/php-fpm /usr/local/bin
 
-EXPOSE 80
 
+COPY ./www/ /usr/local/nginx/html/
+COPY ./nginx.conf /usr/local/nginx/conf/nginx.conf
 COPY ./sh/ /opt/sh/
 
+EXPOSE 80
 ENTRYPOINT ["/opt/sh/startup.sh"]
