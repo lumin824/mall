@@ -11,5 +11,3 @@ services:
   php:
     image: 'php:7.4-fpm'
     restart: always
-    ports:
-      - '9000:9000'
