@@ -5,6 +5,7 @@ services:
     restart: always
     volumes: 
       - './www:/usr/share/nginx/html'
+      - './nginx.conf:/etc/nginx/nginx.conf:ro'
     ports:
       - '8801:80'
   php:
