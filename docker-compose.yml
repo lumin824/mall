@@ -3,4 +3,4 @@ services:
   nginx:
     image: 'nginx'
     ports:
-      - "8989:80"
+      - "8801:80"
