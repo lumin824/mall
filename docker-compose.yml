@@ -1,10 +1,10 @@
 version: '2'
 services:
-  nginx:
+  web:
     image: 'nginx'
     restart: always
-    volumes: 
-      - ./www:/etc/nginx/html
+    volumes:
+      - ./web:/etc/nginx/html
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - '8801:80'
@@ -13,5 +13,5 @@ services:
   php:
     image: 'php:7.4-fpm'
     restart: always
-    volumes: 
-      - ./www:/etc/nginx/html
+    volumes:
+      - ./web:/etc/nginx/html
