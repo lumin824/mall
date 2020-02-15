@@ -4,7 +4,7 @@ services:
     image: 'nginx'
     restart: always
     volumes: 
-      - 'www:/usr/share/nginx/html'
+      - './www:/usr/share/nginx/html'
     ports:
       - '8801:80'
   php:
