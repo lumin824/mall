@@ -2,5 +2,13 @@ version: '2'
 services:
   nginx:
     image: 'nginx'
+    restart: always
+    volumes: 
+      - 'www:/usr/share/nginx/html'
     ports:
-      - "8801:80"
+      - '8801:80'
+  php:
+    image: 'php:7.4-fpm'
+    restart: always
+    ports:
+      - '9000:9000'
