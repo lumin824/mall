@@ -5,7 +5,7 @@ RUN yum install mysql-server
 RUN systemctl start mysqld
 RUN systemctl enable mysqld
 
-EXPOSE 3306
+# EXPOSE 3306
 
 COPY ./entrypoint.sh .
 
